@@ -33,7 +33,7 @@ depends_lib         port:ncurses \
                     port:gmp \
                     port:jansson
 
-patchfiles          patch-src_emacs.c.diff
+patchfiles          patch-src_emacs.c.diff opaque-title-bar.diff
 
 if {${subport} eq ${name}} {
     conflicts-prepend   emacs-mac-app-devel
