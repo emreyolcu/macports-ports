@@ -1,0 +1,26 @@
+--- src/macappkit.m.orig
++++ src/macappkit.m
+@@ -5185,22 +5185,7 @@
+ 
+ void
+ mac_set_frame_window_background (struct frame *f, unsigned long color)
+-{
+-  EmacsWindow *window = FRAME_MAC_WINDOW_OBJECT (f);
+-
+-  mac_within_gui (^{
+-      [window setBackgroundColor:[NSColor colorWithEmacsColorPixel:color]];
+-      /* This formula comes from frame-set-background-mode in
+-	 frame.el.  */
+-      NSAppearanceName name =
+-	((RED_FROM_ULONG (color) + GREEN_FROM_ULONG (color)
+-	  + BLUE_FROM_ULONG (color)) >= (int) (0xff * 3 * .6)
+-	 ? NSAppearanceNameVibrantLight : NSAppearanceNameVibrantDark);
+-
+-      window.appearanceCustomization.appearance =
+-	[NSAppearance appearanceNamed:name];
+-    });
+-}
++{}
+ 
+ /* Store the screen positions of frame F into XPTR and YPTR.
+    These are the positions of the containing window manager window,
